@@ -10,8 +10,40 @@
 	<parent>
 		<groupId>net.bolbat</groupId>
 		<artifactId>bb-parent</artifactId>
-		<version>14-SNAPSHOT</version>
+		<version>15</version>
 	</parent>
+
+	<properties>
+		<bb-logging-bom.version>0.1</bb-logging-bom.version>
+		<bb-commons-bom.version>0.1</bb-commons-bom.version>
+		<bb-testing-bom.version>0.1</bb-testing-bom.version>
+	</properties>
+
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>net.bolbat</groupId>
+				<artifactId>bb-logging-bom</artifactId>
+				<version>${bb-logging-bom.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>net.bolbat</groupId>
+				<artifactId>bb-commons-bom</artifactId>
+				<version>${bb-commons-bom.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+			<dependency>
+				<groupId>net.bolbat</groupId>
+				<artifactId>bb-testing-bom</artifactId>
+				<version>${bb-testing-bom.version}</version>
+				<type>pom</type>
+				<scope>import</scope>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 
 	<dependencies>
 		<!-- Logging dependencies -->
@@ -40,6 +72,7 @@
 			<artifactId>hamcrest-library</artifactId>
 			<scope>compile</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
@@ -75,6 +108,7 @@
 			<artifactId>opentest4j</artifactId>
 			<scope>compile</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.mockito</groupId>
 			<artifactId>mockito-core</artifactId>
@@ -85,6 +119,7 @@
 			<artifactId>mockito-junit-jupiter</artifactId>
 			<scope>compile</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.powermock</groupId>
 			<artifactId>powermock-module-junit4</artifactId>
@@ -95,6 +130,7 @@
 			<artifactId>powermock-api-mockito2</artifactId>
 			<scope>compile</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.awaitility</groupId>
 			<artifactId>awaitility</artifactId>
@@ -105,11 +141,13 @@
 			<artifactId>awaitility-proxy</artifactId>
 			<scope>compile</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>nl.jqno.equalsverifier</groupId>
 			<artifactId>equalsverifier</artifactId>
 			<scope>compile</scope>
 		</dependency>
+
 		<dependency>
 			<groupId>org.openjdk.jmh</groupId>
 			<artifactId>jmh-core</artifactId>
